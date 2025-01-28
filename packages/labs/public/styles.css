@@ -1,0 +1,120 @@
+/* General Styles */
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: var(--color-header-bg);
+    padding: var(--spacing-medium);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar-brand h1 {
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    color: var(--color-inverted);
+    margin: 0;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-medium);
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: bold;
+    padding: var(--spacing-small);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+    background-color: var(--color-accent-hover);
+    color: var(--color-inverted);
+}
+
+.navbar-links a:focus {
+    outline: var(--border-width) solid var(--color-text);
+    outline-offset: var(--spacing-small);
+}
+
+.header-image {
+    display: block;
+    margin: var(--spacing-medium) auto;
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Contact Information Grid */
+dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-small);
+    max-width: 800px;
+    margin: var(--spacing-medium) auto;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 0;
+}
+
+/* Sections */
+section {
+    margin: var(--spacing-medium) auto;
+    padding: var(--spacing-medium);
+    max-width: 800px;
+    border-bottom: var(--border-width) solid var(--color-text);
+}
+
+section h2 {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-medium);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing-small);
+    background-color: var(--color-footer-bg);
+    color: var(--color-inverted);
+    font-size: 0.9rem;
+}
+
+/* Lists */
+ul {
+    list-style: disc inside; /* Use disc bullets and align bullets with text */
+    margin-left: var(--spacing-medium); /* Indent the list relative to the section text */
+    padding-left: 0; /* Remove default padding */
+    line-height: 1.5; /* Add spacing between list items */
+}

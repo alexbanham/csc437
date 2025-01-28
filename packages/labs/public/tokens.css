@@ -1,0 +1,23 @@
+:root {
+    /* Color Tokens */
+    --color-background: #daf0ee; /* Light teal */
+    --color-text: #204c50; /* Dark teal */
+    --color-accent: #ff6f61; /* Coral */
+    --color-accent-hover: #e65c51; /* Darker coral */
+    --color-inverted: #fdf6e3; /* Cream white */
+    --color-header-bg: #226b74; /* Header background color */
+    --color-footer-bg: #204c50; /* Footer background color */
+
+    /* Font Tokens */
+    --font-primary: "Open Sans", sans-serif;
+    --font-secondary: "Pacifico", cursive;
+
+    /* Spacing Tokens */
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 50px;
+
+    /* Border Tokens */
+    --border-radius: 5px;
+    --border-width: 2px;
+}
