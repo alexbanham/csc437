@@ -21,3 +21,12 @@
     --border-radius: 5px;
     --border-width: 2px;
 }
+
+body.dark-mode {
+    --color-header-bg: #101070;
+    --color-background: #00004d;
+    --color-text: #e8ffff;
+    --color-accent: #ffa576;
+    --color-accent-hover: #ff7f50;
+    --color-inverted: #ffffff;
+}
