@@ -53,7 +53,6 @@ nav {
 }
 
 .navbar-links a:hover {
-    text-decoration: underline;
     background-color: var(--color-accent-hover);
     color: var(--color-inverted);
 }
@@ -117,4 +116,11 @@ ul {
     margin-left: var(--spacing-medium); /* Indent the list relative to the section text */
     padding-left: 0; /* Remove default padding */
     line-height: 1.5; /* Add spacing between list items */
+}
+
+/* Highlight the active page in the navbar */
+.navbar-links a.active {
+    font-weight: bold;
+    color: var(--color-inverted);
+    background-color: var(--color-accent);
 }
