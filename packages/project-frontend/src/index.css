@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import './components/AudioVisualizer.css';
+
+:root {
+    color-scheme: light; /* Force light mode by default */
+}
