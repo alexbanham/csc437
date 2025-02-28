@@ -13,7 +13,7 @@ function App({ tasks }) {
         if (!taskName.trim()) return;
         const newTask = { id: `todo-${nanoid()}`, name: taskName, completed: false };
         setTaskList([...taskList, newTask]);
-        setIsModalOpen(false); // Close modal after adding task
+        setIsModalOpen(false);
     };
 
     const toggleTaskCompleted = (taskId) => {
@@ -31,9 +31,6 @@ function App({ tasks }) {
 
     return (
         <main className="m-4 max-w-md mx-auto p-4 border rounded-lg shadow-lg bg-white">
-
-
-            {/* Open Modal Button */}
             <button
                 onClick={() => setIsModalOpen(true)}
                 className="mb-4 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 active:bg-blue-700"
@@ -41,13 +38,12 @@ function App({ tasks }) {
                 New Task
             </button>
 
-            {/* Modal Component */}
             <Modal
                 headerLabel="Add a New Task"
                 isOpen={isModalOpen}
                 onCloseRequested={() => setIsModalOpen(false)}
             >
-                <AddTaskForm onNewTask={addTask}/>
+                <AddTaskForm onNewTask={addTask} />
             </Modal>
 
             <h1 className="text-xl font-bold text-left mb-4">Todo List</h1>
@@ -68,8 +64,7 @@ function App({ tasks }) {
                 </ul>
             </section>
 
-            {/* Grocery Panel Integration */}
-            <GroceryPanel onAddTodo={addTask}/>
+            <GroceryPanel onAddTodo={addTask} />
         </main>
     );
 }
