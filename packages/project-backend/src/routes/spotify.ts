@@ -129,7 +129,7 @@ router.get('/auth/spotify/callback', (req: Request, res: Response, next: NextFun
                 }
             );
             console.log(`Updated Spotify tokens for user: ${username}`);
-            res.redirect('http://localhost:5173/?spotifyConnected=true');
+            res.redirect('https://abanham.csse.dev/?spotifyConnected=true');
         } catch (error) {
             console.error('Error exchanging code for token:', error);
             res.status(500).send('Authentication with Spotify failed');
