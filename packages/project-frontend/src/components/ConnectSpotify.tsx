@@ -9,7 +9,7 @@ interface ConnectSpotifyProps {
 export default function ConnectSpotify({ appJwt, onConnected }: ConnectSpotifyProps) {
     const handleConnect = () => {
         // Use the absolute URL to your backend's Spotify login endpoint.
-        window.location.href = `http://localhost:3000/auth/spotify/login?app_jwt=${encodeURIComponent(appJwt)}`;
+        window.location.href = `https://abanham.csse.dev/auth/spotify/login?app_jwt=${encodeURIComponent(appJwt)}`;
     };
 
     return (
