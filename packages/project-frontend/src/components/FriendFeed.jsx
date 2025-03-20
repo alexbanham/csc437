@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import FriendModal from './FriendModal';
-import { activeListeners, recentListeners } from '../data/mockFriends'; // ✅ Importing mock data
-import AudioVisualizer from './AudioVisualizer';
+import FriendModal from './FriendModal.js';
+import { activeListeners, recentListeners } from '../data/mockFriends.js'; // ✅ Importing mock data
+import AudioVisualizer from './AudioVisualizer.js';
 import {FaPlay} from "react-icons/fa"; // Import visualizer
 
-export default function FriendFeed({ darkMode }) {
+export default function FriendFeed({ darkMode, token }) {
     const [selectedFriend, setSelectedFriend] = useState(null);
     const [loading, setLoading] = useState(true);
 

@@ -1,0 +1,84 @@
+################################################################
+# TEST FILE FOR AUTHENTICATION AND PROTECTED ENDPOINTS
+# This file verifies:
+# 1. /auth/register returns 400 for invalid payloads,
+#    returns 400 if username already exists,
+#    and returns 201 Created for a successful registration.
+#
+# 2. /auth/login returns 400 for invalid payloads,
+#    returns 401 for incorrect credentials,
+#    and returns a valid JWT token on successful login.
+#
+# 3. /api/images returns 200 OK with valid authentication,
+#    returns 401 Unauthorized if no token is provided,
+#    and returns 403 Forbidden if an invalid token is provided.
+################################################################
+
+### Test 1: Register new user with a valid payload
+# Expected: HTTP 201 Created with no response body.
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password"
+}
+
+
+### Test 2: Register new user with missing password (invalid payload)
+# Expected: HTTP 400 Bad Request with an error message stating that username or password is missing.
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser2"
+}
+
+
+### Test 3: Register duplicate user (username already exists)
+# Expected: HTTP 400 Bad Request with an error message "Username already taken".
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password"
+}
+
+
+### Test 4: Login with missing payload (invalid request)
+# Expected: HTTP 400 Bad Request with an error message indicating missing username or password.
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser"
+}
+
+
+### Test 5: Login with incorrect credentials
+# Expected: HTTP 401 Unauthorized with an error message indicating incorrect username or password.
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "wrongpassword"
+}
+
+
+### Test 6: Login with valid credentials
+# Expected: HTTP 200 OK with a JSON body containing the authentication token.
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password"
+}
+
+### NOTE: When you receive a successful response from Test 6, copy the token value from the JSON response.
+# For example, the response may look like:
+# { "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." }
+# You will need this token for the following tests.
+
