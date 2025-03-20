@@ -28,7 +28,7 @@ async function setUpServer() {
         const app = express();
         app.locals.mongoClient = mongoClient;
         app.use(cors({
-            origin: "http://localhost:5173"
+            origin: "*"
         }));
 
         app.use(express.static(staticDir));
